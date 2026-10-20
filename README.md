@@ -2,7 +2,7 @@
 
 Code for the paper by Harsh Gautam, Aditya Kumar, Raoshan Kumar Verma, Aashwit
 Gupta and Deepinder Kaur (Department of Computer Science and Engineering
-(AI&ML), KIET Group of Institutions, Ghaziabad, India).
+(AI&ML), KIET Deemed to be University, Ghaziabad, India).
 
 `notebooks/shortcut_audit.ipynb` runs every experiment in the paper. It masks
 the vocabulary used to retrieve the tweets in four tiers (M0 to M3), evaluates
