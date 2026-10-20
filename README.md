@@ -1,7 +1,8 @@
 # Lexical Shortcuts in Machine-Learning Depression Detection from Tweets: A Residual-Vocabulary Audit
 
 Code for the paper by Harsh Gautam, Aditya Kumar, Raoshan Kumar Verma, Aashwit
-Gupta and Deepinder Kaur (KIET Deemed to be University, Ghaziabad, India).
+Gupta and Deepinder Kaur (Department of Computer Science and Engineering
+(AI&ML), KIET Group of Institutions, Ghaziabad, India).
 
 `notebooks/shortcut_audit.ipynb` runs every experiment in the paper. It masks
 the vocabulary used to retrieve the tweets in four tiers (M0 to M3), evaluates
