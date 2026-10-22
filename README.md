@@ -8,7 +8,8 @@ Gupta and Deepinder Kaur (Department of Computer Science and Engineering
 the vocabulary used to retrieve the tweets in four tiers (M0 to M3), evaluates
 seven classical classifiers on binary screening and six-class subtype
 classification with stratified 5-fold cross-validation, and writes every table
-and figure. No deep learning is used.
+and every result figure. `diagrams/make_diagrams.py` draws the two diagrams.
+No deep learning is used.
 
 ## Data
 
@@ -35,6 +36,35 @@ Each model configuration is fitted once and its out-of-fold predictions are
 stored in `results/checkpoints/`, so an interrupted run resumes where it
 stopped. Setting `SMOKE_N = 2000` in the configuration cell rehearses the
 whole notebook on a stratified subsample in minutes.
+
+## Figures
+
+The notebook saves each result figure as PDF (vector) and PNG in
+`results/figures/`:
+
+| File | Content |
+|---|---|
+| `V1_corpus_and_leakage` | class sizes, retrieval-vocabulary leakage, share masked by each tier |
+| `V2_confusion_M0_M2_M3` | subtype confusion matrices, unmasked, M2 and M3 |
+| `V3_leakage_vs_fragility` | per-subtype leakage against F1 lost at M2 and M3 |
+| `V4_headline_summary` | best configuration per tier and the v2 recovery |
+| `V5_top_features_*` | largest Logistic Regression coefficients for one class |
+| `V6_all_models` | macro-F1 of every classifier at every tier |
+| `V7_roc_pr_binary`, `V8_roc_pr_subtype` | ROC and precision-recall curves |
+| `V9_confusion_*` | confusion matrices at every tier |
+| `V10_metric_heatmap_*` | per-class precision, recall and F1 by tier |
+| `V11_protocol_comparison` | P-sym against P-dep at M2 and M3 |
+| `V12_gain_decomposition` | gain from class weighting and from the v2 features |
+| `V13_robustness` | masking cost under default C, tuned C and repeated folds |
+| `V14_length_control` | binary macro-F1 on all tweets and on a length-matched subsample |
+
+`diagrams/make_diagrams.py` needs only matplotlib and no data. It draws the
+study overview (`D1_overview`) and the system architecture (`D2_architecture`)
+into `diagrams/figures/`:
+
+```
+python diagrams/make_diagrams.py
+```
 
 ## Licence
 
